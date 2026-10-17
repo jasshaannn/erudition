@@ -2,19 +2,18 @@
   "name": "erudition-institute",
   "version": "1.0.0",
   "description": "Erudition Institute of Global Education - Results Portal & Study Abroad Website",
-  "main": "index.html",
+  "main": "public/index.html",
   "scripts": {
-    "dev": "npx serve .",
-    "start": "npx serve .",
-    "build": "echo 'Static site ready for Vercel deployment'"
+    "build": "mkdir -p public && cp index.html favicon.svg erudition-portal.css erudition-portal.js \"Erudition Institute.html\" public/ 2>/dev/null || true",
+    "dev": "npx serve public",
+    "start": "npx serve public"
   },
   "keywords": [
     "erudition",
     "ielts",
     "pte",
     "study-abroad",
-    "results-portal",
-    "visa-consulting"
+    "results-portal"
   ],
   "author": "Erudition Institute",
   "license": "MIT"
