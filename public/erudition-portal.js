@@ -191,41 +191,12 @@
   // THEME SWITCHER (Dark / Light Mode)
   // =========================================================================
   function initTheme() {
-    var themeBtn = document.getElementById('themeToggleBtn');
-    if (!themeBtn) return;
-
-    var savedTheme = localStorage.getItem(STORAGE_THEME_KEY);
-    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var currentTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-
-    applyTheme(currentTheme);
-
-    themeBtn.addEventListener('click', function () {
-      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      var newTheme = isDark ? 'light' : 'dark';
-      applyTheme(newTheme);
-      showToast(newTheme === 'dark' ? '🌙 Dark Mode Activated' : '☀️ Light Mode Activated');
-    });
+    // Permanent dark mode
+    document.documentElement.setAttribute('data-theme', 'dark');
   }
 
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    try {
-      localStorage.setItem(STORAGE_THEME_KEY, theme);
-    } catch (e) {}
-
-    var themeBtn = document.getElementById('themeToggleBtn');
-    if (themeBtn) {
-      if (theme === 'dark') {
-        themeBtn.innerHTML = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
-        themeBtn.setAttribute('title', 'Switch to Light Mode');
-        themeBtn.setAttribute('aria-label', 'Switch to Light Mode');
-      } else {
-        themeBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-        themeBtn.setAttribute('title', 'Switch to Dark Mode');
-        themeBtn.setAttribute('aria-label', 'Switch to Dark Mode');
-      }
-    }
+  function applyTheme() {
+    document.documentElement.setAttribute('data-theme', 'dark');
   }
 
   // =========================================================================
