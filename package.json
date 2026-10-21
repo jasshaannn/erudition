@@ -5,7 +5,7 @@
   "main": "public/index.html",
   "scripts": {
     "build": "mkdir -p public && cp index.html favicon.svg erudition-portal.css erudition-portal.js \"Erudition Institute.html\" sumanpreet-kaur.jpg public/ 2>/dev/null || true",
-    "dev": "npx serve public",
+    "dev": "npm run build && npx serve public",
     "start": "npx serve public"
   },
   "keywords": [
