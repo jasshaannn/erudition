@@ -4,7 +4,7 @@
   "description": "Erudition Institute of Global Education - Results Portal & Study Abroad Website",
   "main": "public/index.html",
   "scripts": {
-    "build": "mkdir -p public && cp index.html favicon.svg erudition-portal.css erudition-portal.js \"Erudition Institute.html\" sumanpreet-kaur.jpg public/ 2>/dev/null || true",
+    "build": "mkdir -p public && cp index.html favicon.svg erudition-portal.css erudition-portal.js \"Erudition Institute.html\" sumanpreet-kaur.jpg logo-dark-mode.png public/ 2>/dev/null || true",
     "dev": "npm run build && npx serve public",
     "start": "npx serve public"
   },
